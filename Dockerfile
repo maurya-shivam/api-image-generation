@@ -57,7 +57,6 @@ CMD ["sh", "-c", "python -m uvicorn main:app --host $UVICORN_HOST --port $UVICOR
 # # ENV PATH="/usr/local/bin:${PATH}"
 # EXPOSE 80
 
-# ENV UVICORN_HOST="172.18.117.120"
 # ENV UVICORN_PORT=8800
 
 # CMD ["sh", "-c", "python -m uvicorn main:app --host $UVICORN_HOST --port $UVICORN_PORT"]
