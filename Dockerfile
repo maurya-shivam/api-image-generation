@@ -22,7 +22,12 @@ EXPOSE 80
 ENV UVICORN_HOST="0.0.0.0"
 ENV UVICORN_PORT=80
 
-CMD ["sh", "-c", "python -m uvicorn main:app --host $UVICORN_HOST --port $UVICORN_PORT"]
+# below will work if any env variable or any sort of variable is not passed direct values as strings are allowed
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+
+# that one works if pass any env variable or any variable, it works well with env variables passed in the docker compose file.
+# provides good flexibility with docker compose.
+# CMD ["sh", "-c", "python -m uvicorn main:app", "--host $UVICORN_HOST", "--port $UVICORN_PORT"]
 
 
 
