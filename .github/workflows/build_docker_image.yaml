@@ -21,6 +21,7 @@ jobs:
   docker-build:
     name: Build Docker Image when push to master/dev
     runs-on: self-hosted
+    needs: super-lint  # Ensure this runs only if super-lint passes
 
     steps:
     - uses: actions/checkout@v4
