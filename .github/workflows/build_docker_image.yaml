@@ -7,9 +7,19 @@ on:
     branches: [ master ]
 
 jobs:
+  super-lint:
+    name: Lint code base
+    runs-on: self-hosted
 
-  build:
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
+
+  docker-build:
+    name: Build Docker Image when push to master/dev
     runs-on: self-hosted
 
     steps:
