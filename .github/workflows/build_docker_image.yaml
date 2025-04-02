@@ -17,6 +17,9 @@ jobs:
 
       - name: Run Super-Linter
         uses: github/super-linter@v4
+        env:
+          DEFAULT_BRANCH: dev
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   docker-build:
     name: Build Docker Image when push to master/dev
